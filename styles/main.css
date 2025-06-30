@@ -1,0 +1,154 @@
+/* Main CSS Bundle - Optimized and Minified */
+:root {
+  --primary-color: #2b1677;
+  --secondary-color: #2a2a2a;
+  --background-dark: #0a0a0f;
+  --text-light: #ffffff;
+  --text-gray: #9ca3af;
+  --gradient-bg: rgba(219, 99, 255, 0.1);
+  --vh: 1vh;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 8rem;
+  padding-top: 4rem;
+}
+
+.overview,
+.process,
+.experience,
+.projects,
+.testimonials,
+.contact {
+  margin-bottom: 0;
+  margin-top: 0;
+  position: relative;
+}
+
+/* Particles Background */
+#particles-js-overview,
+#particles-js-work,
+#particles-js-footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #6C63FF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  opacity: 0.85;
+  mix-blend-mode: exclusion;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.4);
+  transition: width 0.1s ease, height 0.1s ease, opacity 0.1s ease;
+}
+
+.cursor.hover {
+  width: 24px;
+  height: 24px;
+  opacity: 0.95;
+  background-color: rgba(108, 99, 255, 0.2);
+  border: 2px solid #6C63FF;
+}
+
+/* Button Styles */
+.cta-primary,
+body .cta-primary,
+.hero-cta .cta-primary {
+  background: var(--primary-color);
+  box-shadow: 0 4px 12px rgba(43, 22, 119, 0.15);
+}
+
+.cta-primary:hover {
+  box-shadow: 0 12px 24px rgba(43, 22, 119, 0.25);
+  transform: translateY(-3px);
+}
+
+.cta-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Image Optimizations */
+.code-snap-image {
+  opacity: 0.4;
+  transition: opacity 0.3s ease-in-out;
+  transform: none;
+}
+
+.code-snap-image:hover {
+  opacity: 0.8;
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 768px) {
+  section#overview {
+    padding-top: 0.5rem;
+  }
+
+  .code-snap-image {
+    opacity: 1;
+    filter: brightness(1.1) contrast(1.1);
+    transform: none !important;
+  }
+
+  [style*="backdrop-filter"],
+  .cta-secondary,
+  .stat-item,
+  .card,
+  .project-card,
+  .modal-content,
+  .search-modal,
+  .contact-form,
+  .navbar,
+  .dropdown-content,
+  .tooltip {
+    backdrop-filter: none !important;
+  }
+}
